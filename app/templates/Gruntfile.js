@@ -38,7 +38,7 @@ module.exports = function (grunt) {
         css:        '.tmp/dist/css'<% } %><% if (cfg.js) { %>,
         js:         'app/js'<% } else { %>,
         js:         '.tmp/dist/js'<% } %>,
-        template:   'app/_template/template.html',
+        template:   'app/_template',
         pdf:        'pdf'
       }
     }

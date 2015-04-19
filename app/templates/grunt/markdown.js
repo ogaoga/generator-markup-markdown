@@ -8,7 +8,7 @@ module.exports = {
 
   compile: {
     options: {
-      template: '<%%= path.template %>',
+      template: '<%%= path.template %>/template.html',
       markdownOptions: {
         gfm: true,
         highlight: 'manual',

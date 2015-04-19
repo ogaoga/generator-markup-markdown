@@ -20,6 +20,11 @@ module.exports = {
         '!**/_*.jade'
       ],
       ext: '.html'
+    },
+    {
+      src: '<%%= path.template %>/template.jade',
+      dest: '<%%= path.template %>',
+      ext: '.html'
     }]
   }
 
