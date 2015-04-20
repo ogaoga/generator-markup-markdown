@@ -23,7 +23,7 @@ module.exports = {
     },
     {
       src: '<%%= path.template %>/template.jade',
-      dest: '<%%= path.template %>',
+      dest: '<%%= path.template %>/template.html',
       ext: '.html'
     }]
   }
