@@ -95,6 +95,12 @@ module.exports = {
   coffee: {
     files: ['<%%= path.scripts %>/**'],
     tasks: ['newer:coffee']
-  }<% } %>
+  }<% } %>,
+
+  // Compile Markdown
+  markdown: {
+    files: ['<%%= path.markups %>/**/*.md'],
+    tasks: ['markdown']
+  }
 
 };
