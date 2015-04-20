@@ -66,10 +66,13 @@ module.exports = {
 
   // Compile Jade
   jade: {
-    files: ['<%%= path.markups %>/**/*.jade'],
+    files: ['<%%= path.template %>/template.jade'],
     tasks: ['jade']
-  }<% } %><% if (cfg.sass || cfg.libsass) { %>,
-
+  }<% } %>,
+  template: {
+    files: ['<%%= path.template %>/template.html'],
+    tasks: ['markdown']
+  }<% if (cfg.sass || cfg.libsass) { %>,
   // Compile Sass
   sass: {
     files: ['<%%= path.styles %>/**'],
@@ -92,6 +95,12 @@ module.exports = {
   coffee: {
     files: ['<%%= path.scripts %>/**'],
     tasks: ['newer:coffee']
-  }<% } %>
+  }<% } %>,
+
+  // Compile Markdown
+  markdown: {
+    files: ['<%%= path.markups %>/**/*.md'],
+    tasks: ['markdown']
+  }
 
 };

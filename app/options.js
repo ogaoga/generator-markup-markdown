@@ -3,20 +3,21 @@
 var options = [
   {
     name: 'markup',
-    message: 'Markup Language',
+    message: 'Markup Language for template',
     type: 'list',
     choices: [
       {
         name: 'HTML',
         value: 'html',
-        templates: ['app/index.html'],
+        templates: ['app/_template/template.html'],
         directories: [],
         packages: {}
       },
       {
         name: 'Jade',
         value: 'jade',
-        templates: ['grunt/jade.js', 'app/index.jade'],
+        templates: ['grunt/jade.js',
+                    'app/_template/template.jade'],
         directories: [],
         packages: {'grunt-contrib-jade': '^0.14.0'}
       }

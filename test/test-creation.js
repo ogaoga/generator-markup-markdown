@@ -28,10 +28,13 @@ describe('Generator', function () {
     'grunt/useminPrepare.js',
     'grunt/watch.js',
     'grunt/wiredep.js',
-    'app/index.html',
+    'grunt/markdown.js',
+    'grunt/markdownpdf.js',
+    'app/index.md',
+    'app/_template/template.html',
     'app/css/',
     'app/js/',
-    'app/img/'
+    'app/img/',
   ];
   var optionFiles = [
     '.csslintrc',
@@ -58,7 +61,7 @@ describe('Generator', function () {
     'grunt/stylus.js',
     'grunt/validation.js',
     'grunt/webfont.js',
-    'app/index.jade',
+    'app/_template/template.jade',
     'app/_sass/',
     'app/_less/',
     'app/_stylus/',
@@ -131,9 +134,9 @@ describe('Generator', function () {
     ['grunt/watch.js', /'(.*:)?test(:.*)?'/],
     ['grunt/watch.js', /'(.*:)?validation(:.*)?'/],
     ['grunt/watch.js', /'(.*:)?webfont(:.*)?'/],
-    ['app/index.html', /sprites\.css/],
-    ['app/index.html', /glyphs\.css/],
-    ['app/index.html', /modernizr\.js/]
+    ['app/_template/template.html', /sprites\.css/],
+    ['app/_template/template.html', /glyphs\.css/],
+    ['app/_template/template.html', /modernizr\.js/]
   ];
 
   beforeEach(function () {
@@ -196,6 +199,8 @@ describe('Generator', function () {
           'grunt/jscs.js',
           'grunt/jshint.js',
           'grunt/sprite.js',
+          'grunt/markdown.js',
+          'grunt/markdownpdf.js',
           'app/img/_sprites/'
         ]));
         done();
@@ -211,10 +216,11 @@ describe('Generator', function () {
       .on('end', function () {
         assert.file([
           'grunt/jade.js',
-          'app/index.jade'
+          'app/_template/template.jade'
         ]);
         assert.noFile([
-          'app/index.html'
+          'app/index.html',
+          'app/_template/template.html'
         ]);
         assert.fileContent([
           ['package.json', /"grunt-contrib-jade"/],
@@ -222,9 +228,9 @@ describe('Generator', function () {
           ['grunt/watch.js', /'(.*:)?jade(:.*)?'/]
         ]);
         assert.noFileContent([
-          ['app/index.jade', /sprites\.css/],
-          ['app/index.jade', /glyphs\.css/],
-          ['app/index.jade', /modernizr\.js/]
+          ['app/_template/template.jade', /sprites\.css/],
+          ['app/_template/template.jade', /glyphs\.css/],
+          ['app/_template/template.jade', /modernizr\.js/]
         ]);
         done();
       });
@@ -240,9 +246,9 @@ describe('Generator', function () {
       })
       .on('end', function () {
         assert.fileContent([
-          ['app/index.jade', /sprites\.css/],
-          ['app/index.jade', /glyphs\.css/],
-          ['app/index.jade', /modernizr\.js/]
+          ['app/_template/template.jade', /sprites\.css/],
+          ['app/_template/template.jade', /glyphs\.css/],
+          ['app/_template/template.jade', /modernizr\.js/]
         ]);
         done();
       });
@@ -405,7 +411,7 @@ describe('Generator', function () {
           ['package.json', /"grunt-spritesmith"/],
           ['grunt/aliases.js', /'(.*:)?sprite(:.*)?'/],
           ['grunt/watch.js', /'(.*:)?sprite(:.*)?'/],
-          ['app/index.html', /sprites\.css/]
+          ['app/_template/template.html', /sprites\.css/]
         ]);
         done();
       });
@@ -426,7 +432,7 @@ describe('Generator', function () {
           ['package.json', /"grunt-webfont"/],
           ['grunt/aliases.js', /'(.*:)?webfont(:.*)?'/],
           ['grunt/watch.js', /'(.*:)?webfont(:.*)?'/],
-          ['app/index.html', /glyphs\.css/]
+          ['app/_template/template.html', /glyphs\.css/]
         ]);
         done();
       });
@@ -583,7 +589,7 @@ describe('Generator', function () {
           ['package.json', /"grunt-modernizr"/],
           ['bower.json', /"modernizr"/],
           ['grunt/aliases.js', /'(.*:)?modernizr(:.*)?'/],
-          ['app/index.html', /modernizr\.js/]
+          ['app/_template/template.html', /modernizr\.js/]
         ]);
         done();
       });

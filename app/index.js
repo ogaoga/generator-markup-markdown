@@ -254,11 +254,15 @@ var Generator = yeoman.generators.Base.extend({
       this.template('grunt/useminPrepare.js', 'grunt/useminPrepare.js');
       this.template('grunt/watch.js', 'grunt/watch.js');
       this.template('grunt/newer.js', 'grunt/newer.js');
+      this.template('grunt/markdown.js', 'grunt/markdown.js');
+      this.template('grunt/markdownpdf.js', 'grunt/markdownpdf.js');
     },
 
     app: function () {
       mkdirp.sync('app');
       mkdirp.sync('app/img');
+      mkdirp.sync('app/_template');
+      this.template('app/index.md', 'app/index.md');
     },
 
     options: function () {
