@@ -90,14 +90,15 @@ $ yo markup-markdown
 * `--skip-install-message`  
   Skips app installation message.
 
+## Thanks
+
+* This generator is based on [generator-rff](https://github.com/rakuten-frontend/generator-rff).
+
 ## See Also
+* [generator-rff](https://github.com/rakuten-frontend/generator-rff) : Fully customizable Yeoman generator for scaffolding a front-end web app
 * [Yeoman](http://yeoman.io/) : Modern workflows for modern webapps
 * [Grunt](http://gruntjs.com/) : The JavaScript task runner
 * [Bower](http://bower.io/) : Package manager for the web
-
-## ToDo
-
-* Remove SSI feature.
 
 ## License
 Copyright (c) 2015 ogaoga.org. Licensed under the [MIT License](LICENSE).
