@@ -9,17 +9,16 @@ var options = [
       {
         name: 'HTML',
         value: 'html',
-        templates: ['app/index.html'/*,
-                    'app/_template/template.html'*/],
-        directories: ['app/_template'],
+        templates: ['app/_template/template.html'],
+        directories: [],
         packages: {}
       },
       {
         name: 'Jade',
         value: 'jade',
-        templates: ['grunt/jade.js', 'app/index.jade'/*,
-                    'app/_template/template.html'*/],
-        directories: [/*'app/_template'*/],
+        templates: ['grunt/jade.js',
+                    'app/_template/template.jade'],
+        directories: [],
         packages: {'grunt-contrib-jade': '^0.14.0'}
       }
     ]

@@ -261,6 +261,8 @@ var Generator = yeoman.generators.Base.extend({
     app: function () {
       mkdirp.sync('app');
       mkdirp.sync('app/img');
+      mkdirp.sync('app/_template');
+      this.template('app/index.md', 'app/index.md');
     },
 
     options: function () {
