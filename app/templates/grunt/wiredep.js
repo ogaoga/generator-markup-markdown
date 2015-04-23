@@ -8,8 +8,8 @@
 module.exports = {
 
   markups: {<% if (cfg.html) { %>
-    src: ['<%%= path.markups %>/**/*.html']<% } %><% if (cfg.jade) { %>
-    src: ['<%%= path.markups %>/**/*.jade']<% } %><% if (cfg.modernizr) { %>,
+    src: ['<%%= path.template %>/**/*.html']<% } %><% if (cfg.jade) { %>
+    src: ['<%%= path.template %>/**/*.jade']<% } %><% if (cfg.modernizr) { %>,
     exclude: ['bower_components/modernizr/modernizr.js']<% } %>,
     // Force absolute URL
     // "../bower_components/xxxx" -> "/bower_components/xxxx"
