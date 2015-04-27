@@ -1,6 +1,6 @@
 {
   "name": "generator-markup-markdown",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Fully customizable Yeoman generator for scaffolding a front-end web app",
   "author": {
     "name": "ogaoga.org"
